@@ -7,79 +7,51 @@
   <title>Member · AI4Rad Lab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="../images/brand/ai4rad-emblem.svg">
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    /* ---- Member-page-specific components (built on the shared AI4Rad tokens) ---- */
-    .mp-profile { display: grid; grid-template-columns: 1fr 264px; gap: 44px; align-items: center; padding: 40px 0 32px; }
-    .mp-photo-wrap { position: relative; }
-    .mp-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 4px solid var(--bg-card); outline: 1px solid var(--border); }
-    .mp-avatar-fallback { width: 100%; aspect-ratio: 3/4; border-radius: var(--radius-lg); object-fit: cover; background: var(--blue-50); border: 4px solid var(--bg-card); outline: 1px solid var(--border); }
-    .mp-avatar-fallback .avatar-ph { font-size: 3.2rem; border-radius: var(--radius-lg); }
-    .mp-name { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: var(--text-primary); }
-    .mp-name-sub { font-family: var(--font-body); font-size: 1.05rem; font-weight: 400; color: var(--text-secondary); margin-left: 10px; }
-    .mp-title { font-size: 0.82rem; font-weight: 600; color: var(--blue-600); text-transform: uppercase; letter-spacing: 0.06em; margin: 10px 0 14px; }
-    .mp-bio { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.85; }
-    .mp-bio strong { color: var(--text-primary); }
-    .mp-contacts { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
-    .mp-contact { display: inline-flex; align-items: center; gap: 6px; padding: 7px 15px; font-size: 0.78rem; font-weight: 500; background: var(--bg-card); border: 1px solid var(--border); border-radius: 999px; color: var(--text-secondary); transition: all 0.2s; }
-    .mp-contact:hover { background: var(--blue-600); border-color: var(--blue-600); color: #fff; transform: translateY(-1px); box-shadow: var(--shadow-md); }
-    .mp-scholar { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; padding: 16px 22px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: 8px; }
-    .mp-scholar__num { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--text-primary); }
-    .mp-scholar__lbl { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .mp-profile { display: grid; grid-template-columns: 1fr 220px; gap: 48px; align-items: start; padding: 48px 0 32px; }
+    .mp-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-md); border: 1px solid var(--border); }
+    .mp-avatar-fallback { width: 100%; aspect-ratio: 3/4; border-radius: var(--radius-md); background: var(--ai4rad-teal-soft); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
+    .mp-avatar-fallback .avatar-ph { font-size: 2.6rem; border-radius: var(--radius-md); }
+    .mp-back { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 500; color: var(--text-muted); margin-bottom: 20px; }
+    .mp-back:hover { color: var(--text-primary); }
+    .mp-name { font-family: var(--font-display); font-size: 2.2rem; font-weight: 600; line-height: 1.15; color: var(--text-primary); margin-bottom: 4px; }
+    .mp-name-sub { font-size: 1rem; color: var(--text-secondary); margin-left: 8px; }
+    .mp-title { font-size: 0.78rem; font-weight: 600; color: var(--ai4rad-teal-dark); text-transform: uppercase; letter-spacing: 0.06em; margin: 8px 0 14px; }
+    .mp-bio { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.75; }
+    .mp-contacts { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 18px; font-size: 0.88rem; font-weight: 500; }
     .mp-interests { list-style: none; padding: 0; margin: 0; }
-    .mp-interests li { position: relative; padding: 7px 0 7px 20px; color: var(--text-secondary); font-size: 0.9rem; }
-    .mp-interests li::before { content: ''; position: absolute; left: 0; top: 14px; width: 6px; height: 6px; background: var(--blue-600); border-radius: 50%; }
-    .news-item--hl { border-left: 4px solid var(--blue-600); }
-    .pub-card { display: grid; grid-template-columns: 160px 1fr; gap: 22px; padding: 22px 0; border-bottom: 1px solid var(--border-light); }
-    .pub-card:last-child { border-bottom: none; }
-    .pub-card__img { width: 160px; height: 100px; border-radius: var(--radius-md); overflow: hidden; background: var(--blue-50); flex-shrink: 0; }
-    .pub-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-    .pub-card:hover .pub-card__img img { transform: scale(1.05); }
-    .pub-card__title { font-size: 0.95rem; font-weight: 600; line-height: 1.45; color: var(--text-primary); }
-    .pub-card__title a { color: inherit; }
-    .pub-card__title a:hover { color: var(--blue-600); }
-    .pub-card__authors { font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px; line-height: 1.55; }
-    .pub-card__authors strong { color: var(--text-primary); }
-    .pub-card__venue { font-size: 0.82rem; font-style: italic; color: var(--text-muted); margin-top: 2px; }
-    .pub-card.pub-card--noimg { grid-template-columns: 1fr; }
-    .pub-cites { font-size: 0.72rem; font-weight: 600; color: var(--blue-600); margin-top: 5px; }
-    .pub-featured { background: #e3f3f1; padding: 1px 8px; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.7rem; margin-right: 6px; color: var(--ssph-teal-dark); }
-    [data-theme="dark"] .pub-featured { background: #142327; color: var(--blue-400); }
-    .pub-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
-    .mp-tag { display: inline-flex; align-items: center; padding: 2px 9px; font-size: 0.65rem; font-weight: 700; border-radius: 999px; white-space: nowrap; }
-    .mp-tag--ccf { background: #e8edff; color: #3f51b5; }
-    .mp-tag--jcr { background: var(--ssph-teal-soft); color: var(--ssph-teal-dark); }
-    .mp-tag--cas { background: #e2f3f0; color: #0f766e; }
-    .mp-tag--if  { background: #eef4ff; color: #1d4ed8; border: 1px solid #c7d7fe; }
-    .mp-tag--venue { background: var(--slate-100); color: var(--slate-600); }
-    .mp-tag--award { background: #fef9c3; color: #a16207; }
-    [data-theme="dark"] .mp-tag--ccf { background: #1a1f4d; color: #a5b4fc; }
-    [data-theme="dark"] .mp-tag--jcr { background: #0f2d28; color: #5eead4; }
-    [data-theme="dark"] .mp-tag--cas { background: #0f2d28; color: #5eead4; }
-    [data-theme="dark"] .mp-tag--if  { background: #172554; color: #93c5fd; border-color: #1e3a5f; }
-    [data-theme="dark"] .mp-tag--venue { background: #1e293b; color: #94a3b8; }
-    [data-theme="dark"] .mp-tag--award { background: #3b3700; color: #fde68a; }
-    .pub-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-    .pub-links a { display: inline-flex; align-items: center; gap: 4px; padding: 3px 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 999px; font-size: 0.7rem; font-weight: 500; color: var(--text-muted); transition: all 0.2s; }
-    .pub-links a:hover { background: var(--blue-600); border-color: var(--blue-600); color: #fff; }
-    .mp-group-label { font-size: 0.72rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin: 22px 0 4px; }
-    .list-block ul { list-style: none; padding: 0; }
-    .list-block ul li { position: relative; padding: 9px 0 9px 22px; color: var(--text-secondary); font-size: 0.9rem; }
-    .list-block ul li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; background: var(--blue-600); border-radius: 50%; }
-    .mp-back { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 500; color: var(--text-muted); margin: 8px 0 0; }
-    .mp-back .ic { width: 0.85rem; height: 0.85rem; }
+    .mp-interests li { position: relative; padding: 7px 0 7px 18px; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
+    .mp-interests li::before { content: '—'; position: absolute; left: 0; color: var(--ai4rad-teal); font-weight: 500; }
+    .news-list { list-style: none; padding: 0; margin: 0; }
+    .news-list li { padding: 8px 0; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; border-bottom: 1px solid var(--border-light); }
+    .news-list li:last-child { border-bottom: none; }
+    .news-list .date { display: inline-block; min-width: 64px; font-weight: 500; color: var(--text-primary); margin-right: 10px; }
+    .pub-list { list-style: none; padding: 0; margin: 0; }
+    .pub-item { padding: 16px 0; border-bottom: 1px solid var(--border-light); }
+    .pub-item:last-child { border-bottom: none; }
+    .pub-title { font-size: 0.95rem; font-weight: 600; line-height: 1.45; color: var(--text-primary); margin-bottom: 4px; }
+    .pub-title a { color: inherit; }
+    .pub-title a:hover { color: var(--ai4rad-teal-dark); }
+    .pub-authors { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.55; }
+    .pub-venue { font-size: 0.82rem; font-style: italic; color: var(--text-muted); margin-top: 2px; }
+    .pub-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+    .pub-links a { font-size: 0.78rem; font-weight: 500; color: var(--text-muted); }
+    .pub-links a:hover { color: var(--text-primary); }
+    .mp-list { list-style: none; padding: 0; margin: 0; }
+    .mp-list li { position: relative; padding: 7px 0 7px 18px; color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; }
+    .mp-list li::before { content: '—'; position: absolute; left: 0; color: var(--ai4rad-teal); font-weight: 500; }
     .mp-empty { text-align: center; color: var(--text-muted); padding: 80px 0; }
     @media (max-width: 768px) {
-      .mp-profile { grid-template-columns: 1fr; gap: 22px; padding: 28px 0 20px; }
-      .mp-photo-wrap { order: -1; max-width: 190px; margin: 0 auto; }
-      .mp-name { font-size: 1.9rem; text-align: center; }
-      .mp-name-sub { display: block; margin: 4px 0 0; }
+      .mp-profile { grid-template-columns: 1fr; gap: 28px; padding: 32px 0 20px; }
+      .mp-photo-wrap { order: -1; max-width: 180px; margin: 0 auto; }
+      .mp-name { font-size: 1.8rem; text-align: center; }
+      .mp-name-sub { display: block; margin: 4px 0 0; text-align: center; }
       .mp-title, .mp-contacts { justify-content: center; text-align: center; }
-      .pub-card { grid-template-columns: 110px 1fr; gap: 14px; }
-      .pub-card__img { width: 110px; height: 70px; }
-      .mp-avatar-fallback .avatar-ph { font-size: 2.4rem; }
+      .mp-bio { text-align: center; }
+      .mp-avatar-fallback .avatar-ph { font-size: 2.2rem; }
     }
   </style>
 </head>
@@ -93,7 +65,7 @@
       <div class="nav__links">
         <a href="../" class="nav__link">Home</a>
         <a href="../team.html" class="nav__link">Team</a>
-        <a href="#" id="langToggle" class="nav__link--lang">中文</a>
+        <a href="../" id="langToggle" class="nav__link--lang">中文</a>
       </div>
       <button class="nav__theme-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
     </div>
@@ -106,21 +78,20 @@
   </main>
 
   <footer class="footer">
-    <img src="../images/brand/ai4rad-logo-full.svg" alt="AI4Rad Lab" class="footer__brandlogo">
-    <div class="footer__affil-cap">Affiliated with</div>
+    <div class="footer__brand">
+      <img src="../images/brand/ai4rad-logo-full.svg" alt="AI4Rad Lab" class="footer__brandlogo">
+    </div>
+    <div class="footer__links">
+      <a href="../">Home</a>
+      <a href="../team.html">Team</a>
+      <a href="https://github.com/AI4Rad-SSPH" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p class="footer__meta">AI4Rad Lab · Department of Radiology · Shanghai Sixth People's Hospital · &copy; 2026</p>
     <div class="footer__affil">
+      <span class="footer__affil-cap">Affiliated with</span>
       <img src="../images/brand/ssph-med-logo.svg" alt="Shanghai Sixth People's Hospital" class="a-ssph">
-      <span class="footer__affil-sep"></span>
       <img src="../images/brand/sjtu-logo-en.svg" alt="Shanghai Jiao Tong University" class="a-sjtu">
     </div>
-    <div class="footer__institution">Shanghai Sixth People's Hospital</div>
-    <div class="footer__dept">Affiliated to Shanghai Jiao Tong University School of Medicine · Department of Radiology</div>
-    <div class="footer__links">
-      <a href="../">Home</a><span style="color:var(--ssph-line);">·</span>
-      <a href="../team.html">Team</a><span style="color:var(--ssph-line);">·</span>
-      <a href="https://github.com/AI4Rad-SSPH">GitHub Org</a>
-    </div>
-    <p class="footer__meta">AI4Rad Lab · Department of Radiology · &copy; 2026</p>
   </footer>
 
   <script src="../js/main.js"></script>
@@ -131,7 +102,6 @@
     var lang = params.get('lang') === 'cn' ? 'cn' : 'en';
     var root = document.getElementById('mp-root');
 
-    // Language toggle keeps the current member but flips lang.
     var lt = document.getElementById('langToggle');
     lt.textContent = lang === 'cn' ? 'EN' : '中文';
     lt.setAttribute('href', '?id=' + id + (lang === 'cn' ? '' : '&lang=cn'));
@@ -159,7 +129,7 @@
       return '<div class="mp-avatar-fallback"><div class="avatar-ph" aria-hidden="true">' + memberInitials(m) + '</div></div>';
     }
 
-    if (!id) { root.innerHTML = '<p class="mp-empty">No member specified. <a href="../team.html">Back to the team page →</a></p>'; return; }
+    if (!id) { root.innerHTML = '<p class="mp-empty">' + t('No member specified.', '未指定成员。') + ' <a href="../team.html">' + t('Back to the team page →', '返回团队页面 →') + '</a></p>'; return; }
 
     fetch('../data/members/' + id + '.json')
       .then(function(r){ if (!r.ok) throw new Error('not found'); return r.json(); })
@@ -168,20 +138,8 @@
         root.innerHTML = '<p class="mp-empty">' + t('This member has not set up a profile page yet.', '该成员尚未创建个人页面。') + '<br><a href="../team.html">' + t('Back to the team page →', '返回团队页面 →') + '</a></p>';
       });
 
-    function iconSvg(name){
-      var paths = {
-        mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
-        external: '<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>',
-        github: '<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>',
-        cap: '<path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>',
-        document: '<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/>',
-        arrow: '<path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/>'
-      };
-      return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + (paths[name] || '') + '</svg>';
-    }
-
     function sectionHead(title){
-      return '<div class="section-head"><h2 class="section-head__title">' + title + '</h2><div class="section-head__line"></div></div>';
+      return '<h2 class="section-title" style="margin-top:48px;">' + title + '</h2>';
     }
 
     function render(m){
@@ -191,76 +149,67 @@
       var L = m.links || {};
       var html = '';
 
-      // Profile
-      html += '<section class="mp-profile reveal"><div>';
-      html += '<a href="../team.html" class="mp-back">' + iconSvg('arrow') + ' ' + t('Team', '团队') + '</a>';
+      html += '<section class="mp-profile reveal">';
+      html += '<div>';
+      html += '<a href="../team.html" class="mp-back">← ' + t('Team', '团队') + '</a>';
       html += '<h1 class="mp-name">' + name + '<span class="mp-name-sub">' + esc(other) + '</span></h1>';
       if (m.title_en || m.title_cn) html += '<p class="mp-title">' + esc(t(m.title_en, m.title_cn)) + '</p>';
       if (m.bio_en || m.bio_cn) html += '<p class="mp-bio">' + t(m.bio_en, m.bio_cn) + '</p>';
       html += '<div class="mp-contacts">';
-      if (L.email) html += '<a class="mp-contact" href="mailto:' + L.email + '">' + iconSvg('mail') + t('Email', '邮箱') + '</a>';
-      if (L.scholar) html += '<a class="mp-contact" href="' + L.scholar + '" target="_blank" rel="noopener">' + iconSvg('cap') + 'Google Scholar</a>';
-      if (L.github) html += '<a class="mp-contact" href="' + L.github + '" target="_blank" rel="noopener">' + iconSvg('github') + 'GitHub</a>';
-      if (L.homepage) html += '<a class="mp-contact" href="' + L.homepage + '" target="_blank" rel="noopener">' + iconSvg('external') + t('Homepage', '个人主页') + '</a>';
+      if (L.email) html += '<a href="mailto:' + L.email + '">' + t('Email', '邮箱') + '</a>';
+      if (L.scholar) html += '<a href="' + L.scholar + '" target="_blank" rel="noopener">Google Scholar</a>';
+      if (L.github) html += '<a href="' + L.github + '" target="_blank" rel="noopener">GitHub</a>';
+      if (L.homepage) html += '<a href="' + L.homepage + '" target="_blank" rel="noopener">' + t('Homepage', '个人主页') + '</a>';
       html += '</div></div>';
       html += '<div class="mp-photo-wrap">' + renderPhoto(m) + '</div></section>';
 
-      // Interests
       var interests = t(m.interests_en, m.interests_cn);
       if (interests && interests.length) {
-        html += '<div class="reveal" style="margin-top:8px;"><ul class="mp-interests">' + interests.map(function(x){ return '<li>' + x + '</li>'; }).join('') + '</ul></div>';
+        html += '<section class="reveal">' + sectionHead(t('Research', '研究方向'));
+        html += '<ul class="mp-interests">' + interests.map(function(x){ return '<li>' + x + '</li>'; }).join('') + '</ul></section>';
       }
 
-      // News
       var news = t(m.news_en, m.news_cn);
       if (news && news.length) {
-        html += '<section class="reveal" style="margin-top:40px;">' + sectionHead(t('News', '最新动态'));
-        html += '<div class="news-list">' + news.map(function(n){
-          return '<div class="news-item' + (n.highlight ? ' news-item--hl' : '') + '"><span class="news-item__date">' + esc(n.date) + '</span><span class="news-item__text">' + n.text + '</span></div>';
-        }).join('') + '</div></section>';
+        html += '<section class="reveal">' + sectionHead(t('News', '最新动态'));
+        html += '<ul class="news-list">' + news.map(function(n){
+          return '<li><span class="date">' + esc(n.date) + '</span>' + n.text + '</li>';
+        }).join('') + '</ul></section>';
       }
 
-      // Publications
       if (m.publications && m.publications.length) {
-        html += '<section class="reveal" style="margin-top:44px;">' + sectionHead(t('Publications', '论文成果'));
+        html += '<section class="reveal">' + sectionHead(t('Publications', '论文成果'));
+        html += '<ul class="pub-list">';
         m.publications.forEach(function(group){
-          if (group.group_en || group.group_cn) html += '<div class="mp-group-label">' + esc(t(group.group_en, group.group_cn)) + '</div>';
+          if (group.group_en || group.group_cn) html += '<li class="mp-group-label" style="list-style:none;padding-left:0;margin:16px 0 8px;">' + esc(t(group.group_en, group.group_cn)) + '</li>';
           (group.items || []).forEach(function(p){
-            var hasImg = !!p.img;
-            html += '<div class="pub-card' + (hasImg ? '' : ' pub-card--noimg') + '">';
-            if (hasImg) html += '<div class="pub-card__img"><img src="' + asset(p.img) + '" alt="" loading="lazy"></div>';
-            html += '<div>';
+            html += '<li class="pub-item">';
             var titleInner = (p.featured ? '<span class="pub-featured">' + t('Featured', '代表作') + '</span>' : '') + esc(p.title);
-            html += '<div class="pub-card__title">' + (p.url ? '<a href="' + p.url + '" target="_blank" rel="noopener">' + titleInner + '</a>' : titleInner) + '</div>';
-            if (p.authors) html += '<div class="pub-card__authors">' + p.authors + '</div>';
-            if (p.venue) html += '<div class="pub-card__venue">' + esc(p.venue) + '</div>';
-            if (p.cites != null && p.cites !== '') html += '<div class="pub-cites">' + t('Cited by ', '被引 ') + p.cites + '</div>';
-            if (p.tags && p.tags.length) html += '<div class="pub-tags">' + p.tags.map(function(tg){ return '<span class="mp-tag mp-tag--' + (tg.kind || 'venue') + '">' + esc(tg.label) + '</span>'; }).join('') + '</div>';
-            if (p.links && p.links.length) html += '<div class="pub-links">' + p.links.map(function(lk){ return '<a href="' + lk.url + '" target="_blank" rel="noopener">' + iconSvg('external') + esc(lk.label) + '</a>'; }).join('') + '</div>';
-            html += '</div></div>';
+            html += '<div class="pub-title">' + (p.url ? '<a href="' + p.url + '" target="_blank" rel="noopener">' + titleInner + '</a>' : titleInner) + '</div>';
+            if (p.authors) html += '<div class="pub-authors">' + p.authors + '</div>';
+            if (p.venue) html += '<div class="pub-venue">' + esc(p.venue) + '</div>';
+            if (p.links && p.links.length) html += '<div class="pub-links">' + p.links.map(function(lk){ return '<a href="' + lk.url + '" target="_blank" rel="noopener">' + esc(lk.label) + '</a>'; }).join('') + '</div>';
+            html += '</li>';
           });
         });
-        html += '</section>';
+        html += '</ul></section>';
       }
 
-      // Awards
       var awards = t(m.awards_en, m.awards_cn);
       if (awards && awards.length) {
-        html += '<section class="reveal" style="margin-top:44px;">' + sectionHead(t('Honors & Awards', '荣誉奖项'));
-        html += '<div class="list-block"><ul>' + awards.map(function(a){ return '<li>' + a + '</li>'; }).join('') + '</ul></div></section>';
+        html += '<section class="reveal">' + sectionHead(t('Honors & Awards', '荣誉奖项'));
+        html += '<ul class="mp-list">' + awards.map(function(a){ return '<li>' + a + '</li>'; }).join('') + '</ul></section>';
       }
 
-      // Services
       var services = t(m.services_en, m.services_cn);
       if (services && services.length) {
-        html += '<section class="reveal" style="margin-top:44px;">' + sectionHead(t('Academic Services', '学术服务'));
-        html += '<div class="list-block"><ul>' + services.map(function(s){ return '<li>' + s + '</li>'; }).join('') + '</ul></div></section>';
+        html += '<section class="reveal">' + sectionHead(t('Academic Services', '学术服务'));
+        html += '<ul class="mp-list">' + services.map(function(s){ return '<li>' + s + '</li>'; }).join('') + '</ul></section>';
       }
 
       root.innerHTML = html;
       if (lang === 'cn') document.documentElement.setAttribute('lang', 'zh-CN');
 
-      // Reveal-on-scroll for the freshly inserted sections.
       var obs = new IntersectionObserver(function(entries){
         entries.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('visible'); });
       }, { threshold: 0.05 });

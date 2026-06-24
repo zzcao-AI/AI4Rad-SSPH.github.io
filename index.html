@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AI4Rad Lab by SSPH — Medical Imaging AI research team at Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine.">
+  <meta name="description" content="AI4Rad Lab — Medical Imaging AI research at Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine.">
   <title>AI4Rad Lab · Medical Imaging AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="images/brand/ai4rad-emblem.svg">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -31,149 +31,69 @@
 
   <main class="wrapper">
     <section class="hero reveal">
-      <div class="hero__affiliation">
-        Department of Radiology · Shanghai Sixth People's Hospital · SJTU School of Medicine
-      </div>
-      <h1 class="hero__title">Medical Imaging AI Research</h1>
-      <p class="hero__subtitle">Machine learning for brain, vascular, and musculoskeletal radiology. Work published in <em>npj Digital Medicine</em>, <em>Radiology</em>, and <em>European Radiology</em>.</p>
-      <div class="hero__cta">
-        <a href="./team.html" class="btn btn--primary">Meet the Team</a>
-        <a href="https://github.com/AI4Rad-SSPH" class="btn btn--secondary" target="_blank" rel="noopener">GitHub Organization</a>
-      </div>
-    </section>
-
-    <section class="reveal" style="margin-top:8px;">
-      <div class="section-head">
-        <h2 class="section-head__title">Research Directions</h2>
-        <div class="section-head__line"></div>
-      </div>
-      <div class="research-areas">
-        <div class="area-card">
-          <div class="area-card__icon" style="background:var(--area-icon-bg);"><span class="ic ic--eye"></span></div>
-          <div class="area-card__title">Vision Foundation Models</div>
-          <div class="area-card__desc">Visual representation learning for detection, segmentation, and quantitative biomarkers in vascular and musculoskeletal imaging.</div>
-        </div>
-        <div class="area-card">
-          <div class="area-card__icon" style="background:var(--area-icon-bg);"><span class="ic ic--brain"></span></div>
-          <div class="area-card__title">Multimodal Large Language Models</div>
-          <div class="area-card__desc">Integrating imaging, reports, and clinical data for structured reporting and diagnostic reasoning.</div>
-        </div>
-        <div class="area-card">
-          <div class="area-card__icon" style="background:var(--area-icon-bg);"><span class="ic ic--pulse"></span></div>
-          <div class="area-card__title">Medical Image Generation</div>
-          <div class="area-card__desc">Image synthesis, denoising, and enhancement to improve image quality and reduce scan time.</div>
-        </div>
-        <div class="area-card">
-          <div class="area-card__icon" style="background:var(--area-icon-bg);"><span class="ic ic--cube"></span></div>
-          <div class="area-card__title">Spatial Intelligence &amp; Physics Simulation</div>
-          <div class="area-card__desc">3D modeling, registration, and simulation for vascular and musculoskeletal analysis.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="reveal" style="margin-top:56px;">
-      <div class="section-head">
-        <h2 class="section-head__title">Projects</h2>
-        <div class="section-head__line"></div>
-      </div>
-      <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.7;margin-bottom:20px;">Representative clinical-AI efforts from the lab. More code and updates on our <a href="https://github.com/AI4Rad-SSPH" target="_blank" rel="noopener">GitHub organization</a>.</p>
-      <div class="projects">
-        <div class="project-card">
-          <div class="project-card__media"><img src="images/brainmind-npj.svg" alt="BrainMIND" loading="lazy"></div>
-          <div>
-            <div class="project-card__tag">Multimodal LLM · npj Digital Medicine 2026</div>
-            <div class="project-card__title">BrainMIND — LLM-generated diagnostic impressions from brain-MRI reports</div>
-            <div class="project-card__desc">A multicenter benchmark and reader study evaluating large language models for generating diagnostic impressions from brain-MRI findings.</div>
-            <div class="project-card__links"><a href="https://www.nature.com/articles/s41746-026-02380-4" target="_blank" rel="noopener">Paper <span class="ic ic--external" style="width:0.75rem;height:0.75rem;"></span></a><a href="https://github.com/FrankZhangRp/BrainMIND" target="_blank" rel="noopener">Code <span class="ic ic--external" style="width:0.75rem;height:0.75rem;"></span></a></div>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-card__media"><div class="project-card__icon"><span class="ic ic--pulse"></span></div></div>
-          <div>
-            <div class="project-card__tag">Vision FM · Radiology / European Radiology</div>
-            <div class="project-card__title">Cerebrovascular &amp; Stroke AI — aneurysm detection, ASPECTS, clot analysis</div>
-            <div class="project-card__desc">Multicenter deep-learning systems for cerebral-aneurysm detection on CTA, automatic ASPECTS scoring, and thrombus characterization in acute stroke.</div>
-            <div class="project-card__links"><a href="https://github.com/AI4Rad-SSPH" target="_blank" rel="noopener">GitHub Org <span class="ic ic--external" style="width:0.75rem;height:0.75rem;"></span></a></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="resources" class="reveal" style="margin-top:56px;">
-      <div class="section-head">
-        <h2 class="section-head__title">Resources</h2>
-        <div class="section-head__line"></div>
-      </div>
-      <div class="resource-list">
-        <a class="resource-link" href="https://github.com/AI4Rad-SSPH" target="_blank" rel="noopener">
-          <span class="resource-link__icon"><span class="ic ic--github"></span></span>
-          <div><div class="resource-link__title">GitHub Organization</div><div class="resource-link__desc">Open-source code and model releases</div></div>
-        </a>
-        <a class="resource-link" href="https://scholar.google.com/citations?user=zj4WqewAAAAJ" target="_blank" rel="noopener">
-          <span class="resource-link__icon"><span class="ic ic--cap"></span></span>
-          <div><div class="resource-link__title">Publications</div><div class="resource-link__desc">Selected papers on Google Scholar</div></div>
-        </a>
-        <a class="resource-link" href="./team.html">
-          <span class="resource-link__icon"><span class="ic ic--team"></span></span>
-          <div><div class="resource-link__title">Team</div><div class="resource-link__desc">Investigators, students and alumni</div></div>
-        </a>
-        <a class="resource-link" href="mailto:zhangrp@sjtu.edu.cn">
-          <span class="resource-link__icon"><span class="ic ic--mail"></span></span>
-          <div><div class="resource-link__title">Contact</div><div class="resource-link__desc">Reach out to work with us</div></div>
-        </a>
-      </div>
-    </section>
-
-    <section class="reveal" style="margin-top:56px;">
-      <div class="section-head">
-        <h2 class="section-head__title">Latest News</h2>
-        <div class="section-head__line"></div>
-      </div>
-      <div class="news-list">
-        <div class="news-item">
-          <span class="news-item__date">2026.04</span>
-          <span class="news-item__text">BrainMIND paper published in <em>npj Digital Medicine</em>: LLM-based diagnostic impression generation from brain MRI reports.</span>
-        </div>
-        <div class="news-item">
-          <span class="news-item__date">2025.09</span>
-          <span class="news-item__text">European Radiology accepts multicenter ASPECTS stroke study.</span>
-        </div>
-        <div class="news-item">
-          <span class="news-item__date">2024.10</span>
-          <span class="news-item__text">Cerebral aneurysm CTA detection work published in <em>Radiology</em>.</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="reveal" style="margin-top:56px;">
-      <div class="section-head">
-        <h2 class="section-head__title">Join Us</h2>
-        <div class="section-head__line"></div>
-      </div>
-      <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.75;">
-        We recruit PhD and Master students in medical imaging AI and machine learning. Contact <a href="mailto:zhangrp@sjtu.edu.cn">zhangrp@sjtu.edu.cn</a> with your CV.
+      <h1 class="hero__title">AI4Rad Lab</h1>
+      <p class="hero__subtitle">Medical imaging AI research at Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine.</p>
+      <p class="hero__links">
+        <a href="./team.html">Team</a>
+        <span class="hero__sep">·</span>
+        <a href="https://scholar.google.com/citations?user=zj4WqewAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <span class="hero__sep">·</span>
+        <a href="https://github.com/AI4Rad-SSPH" target="_blank" rel="noopener">GitHub</a>
+        <span class="hero__sep">·</span>
+        <a href="mailto:zhangrp@sjtu.edu.cn">Email</a>
       </p>
+    </section>
+
+    <section class="reveal" style="margin-top:64px;">
+      <h2 class="section-title">Research</h2>
+      <ul class="text-list">
+        <li><strong>Vision foundation models</strong> for detection, segmentation, and quantitative biomarkers in vascular and musculoskeletal imaging.</li>
+        <li><strong>Multimodal large language models</strong> integrating imaging, reports, and clinical data for structured reporting and diagnostic reasoning.</li>
+        <li><strong>Medical image generation</strong>, denoising, and enhancement to improve image quality and reduce scan time.</li>
+        <li><strong>Clinical AI generalization</strong> across sites, scanners, and patient distributions.</li>
+      </ul>
+    </section>
+
+    <section class="reveal" style="margin-top:64px;">
+      <h2 class="section-title">Selected Projects</h2>
+      <div class="text-list">
+        <p><strong>BrainMIND</strong> — LLM-based diagnostic impression generation from brain MRI reports. <em>npj Digital Medicine</em>, 2026. <a href="https://www.nature.com/articles/s41746-026-02380-4" target="_blank" rel="noopener">Paper</a> · <a href="https://github.com/FrankZhangRp/BrainMIND" target="_blank" rel="noopener">Code</a></p>
+        <p><strong>Cerebrovascular & Stroke AI</strong> — Aneurysm detection on CTA, automatic ASPECTS scoring, and thrombus characterization in acute stroke. <em>Radiology</em> / <em>European Radiology</em>.</p>
+      </div>
+    </section>
+
+    <section class="reveal" style="margin-top:64px;">
+      <h2 class="section-title">News</h2>
+      <ul class="news-list-plain">
+        <li><span class="news-date">2026.04</span> BrainMIND published in <em>npj Digital Medicine</em>.</li>
+        <li><span class="news-date">2025.09</span> Multicenter ASPECTS stroke study accepted by <em>European Radiology</em>.</li>
+        <li><span class="news-date">2024.10</span> Cerebral aneurysm CTA detection work published in <em>Radiology</em>.</li>
+      </ul>
+    </section>
+
+    <section class="reveal" style="margin-top:64px;">
+      <h2 class="section-title">Join Us</h2>
+      <p class="text-body">We recruit PhD and Master students in medical imaging AI and machine learning. Send your CV to <a href="mailto:zhangrp@sjtu.edu.cn">zhangrp@sjtu.edu.cn</a>.</p>
     </section>
   </main>
 
   <footer class="footer">
-    <img src="images/brand/ai4rad-logo-full.svg" alt="AI4Rad Lab" class="footer__brandlogo">
-    <div class="footer__affil-cap">Affiliated with</div>
+    <div class="footer__brand">
+      <img src="images/brand/ai4rad-logo-full.svg" alt="AI4Rad Lab" class="footer__brandlogo">
+    </div>
+    <div class="footer__links">
+      <a href="./">Home</a>
+      <a href="./team.html">Team</a>
+      <a href="https://scholar.google.com/citations?user=zj4WqewAAAAJ" target="_blank" rel="noopener">Publications</a>
+      <a href="mailto:zhangrp@sjtu.edu.cn">Email</a>
+      <a href="https://github.com/AI4Rad-SSPH" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p class="footer__meta">AI4Rad Lab · Department of Radiology · Shanghai Sixth People's Hospital · &copy; 2026</p>
     <div class="footer__affil">
+      <span class="footer__affil-cap">Affiliated with</span>
       <img src="images/brand/ssph-med-logo.svg" alt="Shanghai Sixth People's Hospital" class="a-ssph">
-      <span class="footer__affil-sep"></span>
       <img src="images/brand/sjtu-logo-en.svg" alt="Shanghai Jiao Tong University" class="a-sjtu">
     </div>
-    <div class="footer__institution">Shanghai Sixth People's Hospital</div>
-    <div class="footer__dept">Affiliated to Shanghai Jiao Tong University School of Medicine · Department of Radiology</div>
-    <div class="footer__links">
-      <a href="./">Home</a><span style="color:var(--ssph-line);">·</span>
-      <a href="./team.html">Team</a><span style="color:var(--ssph-line);">·</span>
-      <a href="https://scholar.google.com/citations?user=zj4WqewAAAAJ">Publications</a><span style="color:var(--ssph-line);">·</span>
-      <a href="mailto:zhangrp@sjtu.edu.cn">Email</a><span style="color:var(--ssph-line);">·</span>
-      <a href="https://github.com/AI4Rad-SSPH">GitHub</a>
-    </div>
-    <p class="footer__meta">AI4Rad Lab · Department of Radiology · &copy; 2026</p>
   </footer>
 
   <script src="js/main.js"></script>
