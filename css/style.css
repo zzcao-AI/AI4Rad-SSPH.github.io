@@ -238,7 +238,8 @@ a:hover { color: var(--ai4rad-blue); }
 .mp-interests { list-style: none; padding: 0; margin: 0; }
 .mp-interests li { position: relative; padding: 6px 0 6px 18px; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
 .mp-interests li::before { content: '—'; position: absolute; left: 0; color: var(--ai4rad-teal); font-weight: 500; }
-.mp-group-label { font-size: 0.7rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin: 22px 0 4px; }
+.mp-group-label { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin: 34px 0 6px; padding-bottom: 8px; border-bottom: 1px solid var(--border); letter-spacing: -0.005em; }
+.mp-group-label:first-child { margin-top: 0; }
 .pub-card { display: grid; grid-template-columns: 1fr; gap: 6px; padding: 18px 0; border-bottom: 1px solid var(--border-light); }
 .pub-card:last-child { border-bottom: none; }
 .pub-card__title { font-size: 0.95rem; font-weight: 600; line-height: 1.45; color: var(--text-primary); }
@@ -354,32 +355,47 @@ a:hover { color: var(--ai4rad-blue); }
 
 /* 2K (QHD) — scale type, spacing, and brand marks up */
 @media (min-width: 1920px) {
-  :root { --content-max: 900px; --nav-height: 64px; }
-  body { font-size: 17px; }
-  .hero__emblem { height: 76px; }
-  .hero__title { font-size: 3.1rem; }
-  .hero__subtitle { font-size: 1.24rem; }
-  .nav__brand-logo { height: 32px; width: 32px; }
-  .nav__brand-text { font-size: 1.08rem; }
-  .nav__link { font-size: 0.86rem; }
-  .section-title { font-size: 1.6rem; }
-  .footer__brandlogo { height: 140px; }
-  .footer__affil .a-ssph { height: 50px; }
-  .footer__affil .a-sjtu { height: 42px; }
-  .footer__affil-sep { height: 46px; }
+  :root { --content-max: 940px; --nav-height: 66px; }
+  body { font-size: 19px; }
+  .hero { padding: 104px 0 52px; }
+  .hero__emblem { height: 88px; }
+  .hero__title { font-size: 3.5rem; }
+  .hero__subtitle { font-size: 1.42rem; }
+  .hero__links { font-size: 1.06rem; }
+  .nav__brand-logo { height: 34px; width: 34px; }
+  .nav__brand-text { font-size: 1.18rem; }
+  .nav__link { font-size: 0.96rem; }
+  .nav__link--lang { font-size: 0.94rem; }
+  .section-title { font-size: 1.9rem; }
+  .text-list li, .news-list-plain li, .text-list p, .text-body { font-size: 1.12rem; }
+  .footer { padding: 64px 0 68px; }
+  .footer__brandlogo { height: 150px; }
+  .footer__links a, .footer__meta { font-size: 0.98rem; }
+  .footer__affil .a-ssph { height: 54px; }
+  .footer__affil .a-sjtu { height: 46px; }
+  .footer__affil-sep { height: 50px; }
 }
 
 /* 4K — cap the measure so lines stay readable, keep scaling marks up */
 @media (min-width: 2560px) {
-  :root { --content-max: 1000px; }
-  body { font-size: 18px; }
-  .hero__title { font-size: 3.4rem; }
-  .hero__emblem { height: 88px; }
-  .footer__brandlogo { height: 200px; }
-  .footer__affil .a-ssph { height: 60px; }
-  .footer__affil .a-sjtu { height: 50px; }
-  .footer__affil-sep { height: 54px; }
-  .footer__affil-logos { gap: 40px; }
+  :root { --content-max: 1080px; }
+  body { font-size: 22px; }
+  .hero { padding: 120px 0 60px; }
+  .hero__emblem { height: 104px; }
+  .hero__title { font-size: 4.2rem; }
+  .hero__subtitle { font-size: 1.66rem; }
+  .hero__links { font-size: 1.22rem; }
+  .nav__brand-logo { height: 40px; width: 40px; }
+  .nav__brand-text { font-size: 1.3rem; }
+  .nav__link { font-size: 1.08rem; }
+  .section-title { font-size: 2.3rem; }
+  .text-list li, .news-list-plain li, .text-list p, .text-body { font-size: 1.3rem; }
+  .footer__brandlogo { height: 210px; }
+  .footer__links a, .footer__meta { font-size: 1.1rem; }
+  .footer__affil .a-ssph { height: 66px; }
+  .footer__affil .a-sjtu { height: 56px; }
+  .footer__affil-sep { height: 60px; }
+  .footer__affil-logos { gap: 44px; }
 }
 
 @media print { body { background: #fff; padding-top: 0; } .nav { display: none; } .reveal { opacity: 1; transform: none; } }

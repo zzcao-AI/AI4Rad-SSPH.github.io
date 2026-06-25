@@ -17,43 +17,62 @@
     .mp-photo { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md); border: 1px solid var(--border); }
     .mp-avatar-fallback { width: 100%; height: 100%; border-radius: var(--radius-md); background: var(--ai4rad-teal-soft); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
     .mp-avatar-fallback .avatar-ph { font-size: 2.6rem; border-radius: var(--radius-md); }
-    .mp-back { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 500; color: var(--text-muted); margin-bottom: 20px; }
+    .mp-back { display: inline-flex; align-items: center; gap: 6px; font-size: 0.86rem; font-weight: 500; color: var(--text-muted); margin-bottom: 20px; }
     .mp-back:hover { color: var(--text-primary); }
-    .mp-name { font-family: var(--font-display); font-size: 2.2rem; font-weight: 600; line-height: 1.15; color: var(--text-primary); margin-bottom: 4px; }
-    .mp-name-sub { font-size: 1rem; color: var(--text-secondary); margin-left: 8px; }
-    .mp-title { font-size: 0.78rem; font-weight: 600; color: var(--ai4rad-teal-dark); text-transform: uppercase; letter-spacing: 0.06em; margin: 8px 0 14px; }
-    .mp-bio { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.75; }
-    .mp-contacts { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 18px; font-size: 0.88rem; font-weight: 500; }
+    .mp-name { font-family: var(--font-display); font-size: 2.4rem; font-weight: 600; line-height: 1.12; color: var(--text-primary); margin-bottom: 4px; letter-spacing: -0.01em; }
+    .mp-name-sub { font-size: 1.05rem; color: var(--text-secondary); margin-left: 8px; }
+    .mp-title { font-size: 0.86rem; font-weight: 600; color: var(--ai4rad-teal-dark); text-transform: uppercase; letter-spacing: 0.06em; margin: 10px 0 16px; }
+    .mp-bio { color: var(--text-secondary); font-size: 1.02rem; line-height: 1.78; }
+    .mp-contacts { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 18px; font-size: 0.95rem; font-weight: 500; }
     .mp-interests { list-style: none; padding: 0; margin: 0; }
-    .mp-interests li { position: relative; padding: 7px 0 7px 18px; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
+    .mp-interests li { position: relative; padding: 8px 0 8px 20px; color: var(--text-secondary); font-size: 0.98rem; line-height: 1.65; }
     .mp-interests li::before { content: '—'; position: absolute; left: 0; color: var(--ai4rad-teal); font-weight: 500; }
     .news-list { list-style: none; padding: 0; margin: 0; }
-    .news-list li { padding: 8px 0; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; border-bottom: 1px solid var(--border-light); }
+    .news-list li { padding: 9px 0; color: var(--text-secondary); font-size: 0.98rem; line-height: 1.65; border-bottom: 1px solid var(--border-light); }
     .news-list li:last-child { border-bottom: none; }
-    .news-list .date { display: inline-block; min-width: 64px; font-weight: 500; color: var(--text-primary); margin-right: 10px; }
+    .news-list .date { display: inline-block; min-width: 72px; font-weight: 600; color: var(--text-primary); margin-right: 12px; font-feature-settings: 'tnum'; }
     .pub-list { list-style: none; padding: 0; margin: 0; }
     .pub-item { padding: 16px 0; border-bottom: 1px solid var(--border-light); }
     .pub-item:last-child { border-bottom: none; }
-    .pub-title { font-size: 0.95rem; font-weight: 600; line-height: 1.45; color: var(--text-primary); margin-bottom: 4px; }
+    .pub-title { font-size: 1.04rem; font-weight: 600; line-height: 1.45; color: var(--text-primary); margin-bottom: 5px; }
     .pub-title a { color: inherit; }
     .pub-title a:hover { color: var(--ai4rad-teal-dark); }
-    .pub-authors { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.55; }
-    .pub-venue { font-size: 0.82rem; font-style: italic; color: var(--text-muted); margin-top: 2px; }
+    .pub-authors { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+    .pub-venue { font-size: 0.9rem; font-style: italic; color: var(--text-muted); margin-top: 3px; }
     .pub-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
-    .pub-links a { font-size: 0.78rem; font-weight: 500; color: var(--text-muted); }
+    .pub-links a { font-size: 0.84rem; font-weight: 500; color: var(--text-muted); }
     .pub-links a:hover { color: var(--text-primary); }
     .mp-list { list-style: none; padding: 0; margin: 0; }
-    .mp-list li { position: relative; padding: 7px 0 7px 18px; color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; }
+    .mp-list li { position: relative; padding: 8px 0 8px 20px; color: var(--text-secondary); font-size: 0.96rem; line-height: 1.65; }
     .mp-list li::before { content: '—'; position: absolute; left: 0; color: var(--ai4rad-teal); font-weight: 500; }
     .mp-empty { text-align: center; color: var(--text-muted); padding: 80px 0; }
     @media (max-width: 768px) {
       .mp-profile { grid-template-columns: 1fr; gap: 28px; padding: 32px 0 20px; }
       .mp-photo-wrap { order: -1; width: 180px; height: 240px; margin: 0 auto; }
-      .mp-name { font-size: 1.8rem; text-align: center; }
+      .mp-name { font-size: 1.9rem; text-align: center; }
       .mp-name-sub { display: block; margin: 4px 0 0; text-align: center; }
       .mp-title, .mp-contacts { justify-content: center; text-align: center; }
       .mp-bio { text-align: center; }
       .mp-avatar-fallback .avatar-ph { font-size: 2.2rem; }
+    }
+    @media (min-width: 1920px) {
+      .mp-name { font-size: 2.8rem; }
+      .mp-bio { font-size: 1.1rem; }
+      .mp-interests li, .news-list li, .mp-list li { font-size: 1.06rem; }
+      .pub-title { font-size: 1.14rem; }
+      .pub-authors, .pub-venue { font-size: 0.98rem; }
+      .mp-group-label { font-size: 1.4rem; }
+      .mp-photo-wrap { width: 260px; height: 346px; }
+    }
+    @media (min-width: 2560px) {
+      .mp-name { font-size: 3.1rem; }
+      .mp-bio { font-size: 1.2rem; line-height: 1.85; }
+      .mp-interests li, .news-list li, .mp-list li { font-size: 1.16rem; }
+      .pub-title { font-size: 1.26rem; }
+      .pub-authors, .pub-venue { font-size: 1.08rem; }
+      .mp-group-label { font-size: 1.55rem; }
+      .mp-photo-wrap { width: 300px; height: 400px; }
+      .pub-item { padding: 20px 0; }
     }
   </style>
 </head>
