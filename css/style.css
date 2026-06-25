@@ -59,11 +59,10 @@ a:hover { color: var(--ai4rad-blue); }
 }
 .nav__inner { display: flex; align-items: center; gap: 12px; max-width: var(--content-max); width: 100%; padding: 0 24px; }
 .nav__brand { margin-right: auto; display: flex; align-items: center; gap: 10px; }
-/* team-logo.png is a horizontal lockup (icon + wordmark), so scale by height
-   and let width follow the aspect ratio. The text label is hidden because the
-   logo already carries the lab name. */
-.nav__brand-logo { height: 34px; width: auto; flex-shrink: 0; }
-.nav__brand-text { display: none; }
+/* team-logo.png is a pure icon (no wordmark), so keep it compact and show the
+   lab name as a text label next to it. */
+.nav__brand-logo { height: 30px; width: auto; flex-shrink: 0; }
+.nav__brand-text { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text-primary); letter-spacing: -0.01em; }
 .nav__links { display: flex; align-items: center; gap: 4px; }
 .nav__link { padding: 5px 12px; font-size: 0.82rem; font-weight: 500; color: var(--text-secondary); border-radius: var(--radius-sm); transition: color 0.2s; }
 .nav__link:hover { color: var(--text-primary); background: transparent; }
@@ -108,6 +107,8 @@ a:hover { color: var(--ai4rad-blue); }
 .footer { margin-top: 96px; padding: 44px 0 52px; border-top: 1px solid var(--border); text-align: center; background: var(--bg-page); }
 .footer__brand { margin-bottom: 26px; }
 .footer__brandlogo { height: clamp(96px, 11vw, 132px); width: auto; max-width: 100%; opacity: 0.95; }
+.footer__brand-cap { margin-top: 14px; font-size: 0.86rem; line-height: 1.7; color: var(--text-secondary); }
+.footer__brand-cap strong { color: var(--text-primary); font-weight: 600; }
 .footer__links { display: flex; justify-content: center; gap: 18px; margin-bottom: 16px; flex-wrap: wrap; }
 .footer__links a { font-size: 0.85rem; color: var(--text-secondary); font-weight: 500; }
 .footer__links a:hover { color: var(--text-primary); }
@@ -117,12 +118,12 @@ a:hover { color: var(--ai4rad-blue); }
 .footer__affil { display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .footer__affil-cap { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); }
 .footer__affil-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: clamp(20px, 3vw, 34px); }
-.footer__affil img { width: auto; opacity: 0.7; display: block; }
+.footer__affil img { width: auto; opacity: 0.82; display: block; }
 /* SSPH wordmark is very wide (~4:1) — cap by height so it reads; SJTU lockup
    is wider than tall — keep it a touch shorter to balance the SSPH wordmark. */
-.footer__affil .a-ssph { height: clamp(34px, 4vw, 46px); }
-.footer__affil .a-sjtu { height: clamp(28px, 3.2vw, 38px); }
-.footer__affil-sep { width: 1px; height: 34px; background: var(--border); flex-shrink: 0; }
+.footer__affil .a-ssph { height: clamp(46px, 5.4vw, 64px); }
+.footer__affil .a-sjtu { height: clamp(40px, 4.6vw, 56px); }
+.footer__affil-sep { width: 1px; height: 46px; background: var(--border); flex-shrink: 0; }
 [data-theme="dark"] .footer__brandlogo { filter: brightness(1.1); }
 [data-theme="dark"] .footer__affil img { opacity: 0.75; }
 
@@ -373,9 +374,9 @@ a:hover { color: var(--ai4rad-blue); }
   .footer { padding: 64px 0 68px; }
   .footer__brandlogo { height: 200px; }
   .footer__links a, .footer__meta { font-size: 0.98rem; }
-  .footer__affil .a-ssph { height: 54px; }
-  .footer__affil .a-sjtu { height: 46px; }
-  .footer__affil-sep { height: 50px; }
+  .footer__affil .a-ssph { height: 70px; }
+  .footer__affil .a-sjtu { height: 60px; }
+  .footer__affil-sep { height: 62px; }
 }
 
 /* 4K — cap the measure so lines stay readable, keep scaling marks up */
@@ -393,10 +394,10 @@ a:hover { color: var(--ai4rad-blue); }
   .text-list li, .news-list-plain li, .text-list p, .text-body { font-size: 1.3rem; }
   .footer__brandlogo { height: 280px; }
   .footer__links a, .footer__meta { font-size: 1.1rem; }
-  .footer__affil .a-ssph { height: 66px; }
-  .footer__affil .a-sjtu { height: 56px; }
-  .footer__affil-sep { height: 60px; }
-  .footer__affil-logos { gap: 44px; }
+  .footer__affil .a-ssph { height: 88px; }
+  .footer__affil .a-sjtu { height: 74px; }
+  .footer__affil-sep { height: 76px; }
+  .footer__affil-logos { gap: 52px; }
 }
 
 @media print { body { background: #fff; padding-top: 0; } .nav { display: none; } .reveal { opacity: 1; transform: none; } }
